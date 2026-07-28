@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Brand palette ---- */
+  --color-primary-50: #eefbf8;
+  --color-primary-100: #d3f4ec;
+  --color-primary-200: #a5e8d9;
+  --color-primary-400: #2fb8a3;
+  --color-primary-500: #0d9488;
+  --color-primary-600: #0a7d73;
+  --color-primary-700: #086259;
+
+  --color-gold-100: #f8f0dc;
+  --color-gold-400: #cba135;
+  --color-gold-500: #b3872a;
+
+  --color-ink-900: #0d1b1a;
+  --color-ink-700: #1f2e2c;
+  --color-ink-500: #52645f;
+  --color-ink-300: #8fa19c;
+
+  --color-bg: #f6faf8;
+  --color-surface: #ffffff;
+  --color-border: #e3ece8;
+
+  --color-danger: #dc4a3f;
+  --color-success: #1f9d63;
+
+  /* ---- Type ---- */
+  --font-display: var(--font-cairo), "Cairo", sans-serif;
+  --font-body: var(--font-tajawal), "Tajawal", sans-serif;
+
+  /* ---- Radius ---- */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+
+  /* ---- Shadows ---- */
+  --shadow-soft: 0 4px 24px -4px rgb(13 27 26 / 0.08);
+  --shadow-lift: 0 16px 40px -12px rgb(13 27 26 / 0.18);
+
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-pulse-ring: pulse-ring 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes pulse-ring {
+    0% { box-shadow: 0 0 0 0 rgb(13 148 136 / 0.35); }
+    70% { box-shadow: 0 0 0 12px rgb(13 148 136 / 0); }
+    100% { box-shadow: 0 0 0 0 rgb(13 148 136 / 0); }
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink-900);
+    font-family: var(--font-body);
+    font-feature-settings: "ss01" 1;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  ::selection {
+    background: var(--color-primary-200);
+    color: var(--color-primary-700);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .container-app {
+    width: 100%;
+    max-width: 84rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 1024px) {
+    .container-app {
+      padding-inline: 2rem;
+    }
+  }
+}
