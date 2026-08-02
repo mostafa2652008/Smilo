@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Cairo, Tajawal } from "next/font/google";
 import "./globals.css";
-
+import { WhatsAppButton } from "@/components/whatsapp-button";
 const cairo = Cairo({
   subsets: ["arabic", "latin"],
   weight: ["500", "600", "700", "800", "900"],
@@ -46,6 +46,7 @@ title: {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  <WhatsAppButton />
   return (
     <html lang="ar" dir="rtl" className={`${cairo.variable} ${tajawal.variable}`}>
       <body className="antialiased">{children}</body>
