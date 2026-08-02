@@ -18,10 +18,10 @@ const tajawal = Tajawal({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://smilo-dental.example"),
-  title: {
-    default: "سميلو | مستلزمات طب الأسنان الاحترافية للعيادات",
-    template: "%s | سميلو",
-  },
+title: {
+  default: "Smilo | مستلزمات طب الأسنان الاحترافية للعيادات",
+  template: "%s | Smilo",
+},
   description:
     "سميلو منصة متخصصة في توريد مستلزمات وأجهزة طب الأسنان للعيادات والمراكز الطبية، بجودة عالمية وشحن سريع وضمان أصالة المنتجات.",
   keywords: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "سميلو",
   ],
   openGraph: {
-    title: "سميلو | مستلزمات طب الأسنان الاحترافية للعيادات",
+    title: "Smilo | مستلزمات طب الأسنان الاحترافية للعيادات",
     description:
       "تسوّق أفضل ماركات مستلزمات طب الأسنان العالمية بثقة وسرعة توصيل عالية.",
     locale: "ar_EG",
