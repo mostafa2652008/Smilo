@@ -66,10 +66,9 @@ export function Header() {
                 />
               </svg>
             </span>
-            <span className="font-display text-xl font-extrabold text-ink-900">
-              سميلو
-            </span>
-          </Link>
+        <span className="font-display text-xl font-extrabold text-ink-900" dir="ltr">
+  Smilo
+</span>
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-1">
